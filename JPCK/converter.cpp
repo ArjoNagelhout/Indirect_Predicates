@@ -281,6 +281,7 @@ public:
 		if (!prevHeader)
 		{
 			header << heading_comment;
+			header << "#pragma once\n\n";
 			header << "#include \"implicit_point.h\"\n\n";
 		}
 
@@ -1350,6 +1351,7 @@ bool parseLine(ifstream& file, int ln)
 
 int main(int argc, char *argv[])
 {
+	std::cout << "hello world" << std::endl;
 	if (argc < 2) error("USAGE: converter filename.txt [-p]\nIf '-p', all the code is appended to 'indirect_predicates.cpp'\n", 0);
 
 	_controlfp(_RC_UP, _MCW_RC);
